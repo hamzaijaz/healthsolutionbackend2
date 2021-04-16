@@ -1,0 +1,14 @@
+{
+  "settings": [
+    {
+      "name": "ServiceBusConnection",
+      "value": "${config-ShortLineOfBusiness}$ShortEnvironment-${config-ProductName}-servicebus-connectionstring",
+      "isKeyVaultReference": true
+    },
+    {
+      "name": "ConnectionString",
+      "value": "${config-ShortLineOfBusiness}$ShortEnvironment-${config-ProductName}-demo-sql-connectionstring",
+      "isKeyVaultReference": true
+    }
+  ]
+}

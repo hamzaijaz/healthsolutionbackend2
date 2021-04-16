@@ -1,0 +1,122 @@
+{
+  "apis": [
+    {
+      "name": "capitalraising2api",
+      "operations": [
+        {
+          "name": "createRightsIssues"
+        },
+        {
+          "name": "getRightsIssue"
+        },
+        {
+          "name": "getRightsIssues"
+        },
+        {
+          "name": "updateRightsIssue"
+        },
+        {
+          "name": "announceRightsIssue"
+        },
+        {
+          "name": "openRightsIssue"
+        },
+        {
+          "name": "closeRightsIssue"
+        },
+        {
+          "name": "getRightsIssueStage"
+        },
+        {
+          "name": "importRightsIssueOffers"
+        },
+        {
+          "name": "lettersRightsIssue"
+        },
+        {
+          "name": "searchOfferRightsIssue"
+        },
+        {
+          "name": "validateOfferRightsIssue"
+        },
+        {
+          "name": "exportRightsIssueCustodianOffers"
+        },
+        {
+          "name": "acceptOfferRightsIssue"
+        },
+        {
+          "name": "getRightsIssueStatistics"
+        },
+        {
+          "name": "calculateRightsIssueAllocations"
+        },
+        {
+          "name": "confirmRightsIssueAllocations"
+        },
+        {
+          "name": "getCustodiansForRightsIssue"
+        },
+        {
+          "name": "importRightsIssueCustodianAcceptances"
+        },
+        {
+          "name": "exportRightsIssueAllocations"
+        },
+        {
+          "name": "getPaymentsForRightsIssue"
+        },
+        {
+          "name": "matchPaymentsForRightsIssueAcceptance"
+        },
+        {
+          "name": "exportRightsIssueCustodianAcceptances"
+        },
+        {
+          "name": "getRightsIssueAcceptances"
+        },
+        {
+          "name": "getRightsIssueReports"
+        },
+        {
+          "name": "refundRightsIssueAcceptance"
+        },
+        {
+          "name": "dishonourRightsIssueAcceptance"
+        },
+        {
+          "name": "reduceRightsIssueAcceptance"
+        },
+        {
+          "name": "linkRightsIssueOfferToCustodian"
+        },
+        {
+          "name": "createRightsIssueRefunds"
+        },
+        {
+          "name": "emailRightsIssueOffer"
+        },
+        {
+          "name": "sendRightsIssueAllocationEmails"
+        },
+		{
+          "name": "sendRightsIssueAcceptanceRefundEmails"
+        }
+      ]
+    },
+    {
+      "name": "capitalraisingretailer2api",
+      "operations": [
+        {
+          "name": "getRightsIssueStage"
+        },
+        {
+          "name": "validateOfferRightsIssue"
+        },
+        {
+          "name": "acceptOfferRightsIssue"
+        }
+      ]
+    }
+  ]
+}

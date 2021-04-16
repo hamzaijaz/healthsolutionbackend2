@@ -1,0 +1,60 @@
+﻿using AutoMapper;
+using Microsoft.Azure.WebJobs;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
+using CapitalRaising.RightsIssues.Service.FunctionApp.Models;
+using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using CapitalRaising.RightsIssues.Service.Application.Patients.Queries;
+using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient;
+
+namespace CapitalRaising.RightsIssues.Service.FunctionApp.HttpTriggers
+{
+    [ExcludeFromCodeCoverage] // API tests are expected to cover this area
+    public class PatientFunctions
+    {
+        private readonly IHttpFunctionMediator _httpFunctionMediator;
+        private readonly IMapper _mapper;
+
+        public PatientFunctions(IHttpFunctionMediator httpFunctionMediator,
+                                    IMapper mapper)
+        {
+            _mapper = mapper;
+            _httpFunctionMediator = httpFunctionMediator;
+        }
+
+        [FunctionName("CreatePatient")]
+        public async Task<IActionResult> CreatePatient(
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = RouteConstants.Patient)] CreatePatientCommand request,
+            HttpRequest req,
+            Microsoft.Azure.WebJobs.ExecutionContext context)
+        {
+            // Map from our incoming request to the command
+            //var command = _mapper.Map<CreatePatientCommand>(request);
+
+            return await _httpFunctionMediator.ExecuteAsync<CreatePatientCommand, CreatePatientResponse>(
+                context.InvocationId,
+                context.FunctionName,
+                req,
+                request,
+                (r) => new CreatedObjectResult("patients", r.Patient.PatientKey.ToString(), r.Patient).ToTask());
+        }
+
+        [FunctionName("GetPatient")]
+        public async Task<IActionResult> GetPatient(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = RouteConstants.Patient + "/{patientkey}")] GetPatientQuery queryArg,
+            HttpRequest req,
+            Microsoft.Azure.WebJobs.ExecutionContext context)
+        {
+            return await _httpFunctionMediator.ExecuteAsync<GetPatientQuery, GetPatientQueryResponse>(
+                context.InvocationId,
+                context.FunctionName,
+                req,
+                queryArg,
+                (r) => new ObjectResult(_mapper.Map<Patient>(r.Patient)).ToTask());
+        }
+    }
+}

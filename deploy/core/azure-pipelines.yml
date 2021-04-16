@@ -1,0 +1,23 @@
+variables:
+  majorVersion: 1
+  minorVersion: 0
+
+trigger:
+- master
+
+name: $(majorVersion).$(minorVersion).$(Rev:r)
+
+pool:
+ vmImage: 'ubuntu-latest'
+
+steps:
+  # need to persist credentials so the bash script is authenticated
+  - checkout: self
+    persistCredentials: true
+    
+  - bash: |
+      git tag $BUILD_NUMBER
+      git push origin --tags
+    env:
+      BUILD_NUMBER: $(Build.BuildNumber)
+    displayName: Tag 'master' with version '$(Build.BuildNumber)'    

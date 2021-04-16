@@ -1,0 +1,44 @@
+{
+  "queues": [
+    {
+      "name": "my.sample.queue"
+    },
+    {
+      "name": "my.custom.queue",
+      "maxSize": "2048",
+      "maxDeliveryCount": 1
+    },
+    {
+      "name": "my.deleted.queue",
+      "delete": "true"
+    }
+  ],
+  "topics": [
+    {
+      "name": "my.sample.topic"
+    },
+    {
+      "name": "my.custom.topic",
+      "maxSize": "2048"
+    },
+    {
+      "name": "my.deleted.topic",
+      "delete": "true"
+    }
+  ],
+  "subscriptions": [
+    {
+      "name": "my.subscription",
+      "topicName": "my.sample.topic"
+    },
+    {
+      "name": "my.custom.subscription",
+      "topicName": "my.sample.topic",
+      "maxDeliveryCount": 1
+    },
+    {
+      "name": "my.deleted.subscription",
+      "delete": "true"
+    }
+  ]
+}

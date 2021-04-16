@@ -1,0 +1,110 @@
+# REQUIRES THE REST CLIENT EXTENSION
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+#NOTE: BaseUrl/API Keys/User are read from the .vscode/settings.json file based on the selected environment in the RH bottom corner of the screen.
+
+@patientKey=2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03FD
+
+# Create Patient
+POST http://localhost:7071/api/patients
+Content-Type: application/json
+
+{
+    "PatientKey": "2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03FF",
+    "FirstName": "Shahrukh",
+    "LastName": "Khan",
+    "DateOfBirth": "13-05-1998",
+    "Gender": "Male",
+    "StreetAddress": "76 Collins Road",
+    "Suburb": "Richmond",
+    "Postcode": "3000",
+    "HealthCoverType": "Bupa",
+    "PolicyNumber": "123456"
+}
+
+# Create patient - return Validation errors
+###
+POST {{baseUrl}}/issuers/{{issuerKey}}/rightsissues
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+Content-Type: application/json
+
+{
+  "eventKey": "{{eventKey}}",
+  "name": "",
+  "rightsIssueType": "",
+  "pricePerShare": 0,
+  "currencyCode": "",
+  "newSharesRatio": 0,
+  "forSharesHeldRatio": 0,
+  "amountToBeRaised": 0,
+  "numberOfSharesToBeIssued": 0,
+  "acceptedTermsAndConditions": false,
+  "announcementDate": "2020-07-01",
+  "exDate": "2020-07-01",
+  "recordDate": "2020-07-04",
+  "offerOpenDate": "2020-07-07",
+  "offerCloseDate": "2020-07-14",
+  "issueDate": "2020-07-22",
+  "allowOverSubscription": false,
+}
+
+### Update patient
+PUT {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/{{eventKey}}
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+Content-Type: application/json
+
+{
+  "name": "FOrth Attempt updated 901",
+  "rightsIssueType": "Non-Renounceable",
+  "pricePerShare": 2,
+  "currencyCode": "AUD",
+  "newSharesRatio": 1,
+  "forSharesHeldRatio": 10,
+  "amountToBeRaised": 4000000,
+  "numberOfSharesToBeIssued": 1000000,
+  "acceptedTermsAndConditions": true,
+  "announcementDate": "2020-10-02",
+  "exDate": "2020-10-03",
+  "recordDate": "2020-10-04",
+  "offerOpenDate": "2020-10-07",
+  "offerCloseDate": "2020-10-14",
+  "issueDate": "2020-10-22",
+  "allowOverSubscription": false,
+}
+
+### GetPatients:- get all patients.
+GET {{baseUrl}}/issuers/{{issuerKey}}/rightsissues
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+
+###GetPatient:
+GET  http://localhost:7071/api/patients/{{patientKey}}
+//X-API-KEY: {{apikey}}
+//OriginatingUsername: {{user}}
+
+### GetRightsIssue:- Validation missing eventkey
+GET {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/69D8E658-C89C-48B9-BE4C-7ADEEF80A203
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+
+### invalid issuer should throw
+GET {{baseUrl}}/issuers/496B0692-8D13-48D0-A616-85BCF7616DAB/rightsissues
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+
+### Announce
+PUT {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/{{eventKey}}/announce
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+
+### Open
+PUT {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/{{eventKey}}/open
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}
+
+### Close
+PUT {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/{{eventKey}}/close
+X-API-KEY: {{apikey}}
+OriginatingUsername: {{user}}

@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "ConnectionString": "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=cr_rightsissues_local; Integrated Security=True",
+    "ServiceBusConnection": "Endpoint=sb://cpudigitalfoundry-{username}.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey={ursharedkey};TransportType=AmqpWebSockets",
+    "CorrespondenceBlobStorageConnectionString": "UseDevelopmentStorage=true",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "",
+    "ApplicationFullName": "dfdev-capitalraising-rightsissues",
+    "HealthCheckCRON": "0 */4 * * * *",
+    "SendStatisticsEmailsCRON": "0 0 2 * * *"
+  }
+}

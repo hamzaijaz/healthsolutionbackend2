@@ -1,0 +1,146 @@
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core
+
+variables:
+  local-MajorVersion: 2
+  local-MinorVersion: 0
+  local-RootPath: 
+  local-IncludeSql: true
+  local-ArtifactFeedName: FoundryCommon
+  disable.coverage.autogenerate: 'true'
+  local-ProductCode: cr
+  local-ProductName: capitalraising
+  local-ApplicationName: rightsissues
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
+    local-branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+    local-branchName: $[ replace(variables['System.PullRequest.SourceBranch'], 'refs/heads/', '') ]
+  
+trigger:
+  branches:
+    include:
+    - master
+
+  paths:
+    include:
+      - /*  
+
+name: $(local-MajorVersion).$(local-MinorVersion).$(Rev:r)
+
+resources:
+  repositories:
+    - repository: pipeline_templates
+      type: git
+      name: foundry-core/pipelines
+      ref: refs/heads/master
+
+    - repository: deployment
+      type: git
+      name: Product.Infrastructure
+      ref: refs/heads/master
+
+# Build templates:  https://dev.azure.com/cpu-digital-foundry/foundry-core/_git/pipelines
+stages:
+- stage: build
+  jobs:
+
+  - job: Build_Function_App
+    displayName: 'dotnet build: FunctionApp'
+    pool:
+      vmImage: "Ubuntu-Latest"
+    steps:  
+
+    - checkout: self
+      submodules: true
+
+    - task: AzureCLI@2
+      displayName: Setup integration test database
+      inputs:
+        azureSubscription: dfdev-capitalraising-application-deployment
+        scriptType: pscore
+        powerShellErrorActionPreference: stop
+        addSpnToEnvironment: true
+        failOnStandardError: true
+        scriptPath: $(Build.SourcesDirectory)/build/setup-integrationtest.ps1
+        arguments:
+          -ShortEnvironment dev `
+          -VariableOverrides @{"app-DatabaseName" = "$(local-ProductCode)_$(local-ApplicationName)_integrationtests_$(local-branchName)" ; "config-ApplicationName" = "$(local-ApplicationName)$(local-branchName)integrationtests"}
+
+    - template: Steps/dotnetcore-build-and-test-steps.yml@pipeline_templates
+      parameters:
+        artifactFeed: $(local-ArtifactFeedName)
+        codeCoverageThreshold: 80
+        nugetConfigPath: '$(Build.SourcesDirectory)/$(local-RootPath)/build/nuget.config'
+        buildProjects: |
+          $(Build.SourcesDirectory)/$(local-RootPath)/*.sln
+        testProjects: |
+          $(Build.SourcesDirectory)/$(local-RootPath)/tests/*.csproj
+        solutionFolder: $(Build.SourcesDirectory)
+
+    - task: AzureCLI@2
+      displayName: Clean up integration test database
+      inputs:
+        azureSubscription: dfdev-capitalraising-application-deployment
+        scriptType: pscore
+        powerShellErrorActionPreference: stop
+        addSpnToEnvironment: true
+        failOnStandardError: true
+        scriptPath: $(Build.SourcesDirectory)/build/cleanup-integrationtest.ps1
+        arguments:
+          -ShortEnvironment dev `
+          -VariableOverrides @{"app-DatabaseName" = "$(local-ProductCode)_$(local-ApplicationName)_integrationtests_$(local-branchName)" ; "config-ApplicationName" = "$(local-ApplicationName)$(local-branchName)integrationtests"}
+        
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet publish: FunctionApp'
+      condition: eq(variables['Build.SourceBranchName'], 'master')
+      inputs:
+        command: publish
+        noBuild: true
+        projects: $(Build.SourcesDirectory)/$(local-RootPath)/src/**/FunctionApp.csproj
+        publishWebProjects: false
+        versioningScheme: byBuildNumber
+        zipAfterPublish: true
+        arguments: --configuration Release --no-build --output $(Build.ArtifactStagingDirectory)
+
+    - publish: $(Build.ArtifactStagingDirectory)
+      displayName: 'publish artifact: FunctionApp'
+      condition: eq(variables['Build.SourceBranchName'], 'master')
+      artifact: FunctionApp
+
+  - job: Publish_DeploymentScripts
+    displayName: 'publish deploy scripts'
+    pool:
+      vmImage: 'Ubuntu-Latest'
+    steps:
+    - checkout: self
+      submodules: true 
+    
+    - publish: '$(Build.SourcesDirectory)/$(local-RootPath)/deploy'
+      displayName: 'publish artifact: DeploymentScripts'
+      condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))
+      artifact: DeploymentScripts
+
+  # - job: Publish_OpenApi
+  #   displayName: 'publish open api scripts'
+  #   pool:
+  #     vmImage: 'Ubuntu-Latest'
+  #   steps:
+  #   - checkout: self
+  #     submodules: true 
+    
+  #   - publish: '$(Build.SourcesDirectory)/$(local-RootPath)/openapi'
+  #     displayName: 'publish artifact: OpenApi'
+  #     #condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))
+  #     artifact: OpenApi
+
+  - job: Build_Database
+    displayName: 'publish artifact: SqlSource'
+    condition: eq(variables['local-IncludeSql'], 'true')
+    pool:
+      vmImage: 'Ubuntu-Latest'
+    steps:
+    - template: Steps/database-build-steps.yml@pipeline_templates
+      parameters:
+        rootPath: $(local-RootPath)
+        
+

@@ -1,0 +1,19 @@
+<policies>
+    <inbound>
+        <base />
+        <choose>
+            <when condition='@(context.Request.Headers.ContainsKey("x-ms-routing-name"))'>
+                <set-backend-service backend-id='@(string.Concat("{#BackendName#}", "-", context.Request.Headers.GetValueOrDefault("x-ms-routing-name")))' />
+            </when>
+            <otherwise>
+                <set-backend-service backend-id="{#BackendName#}" />
+            </otherwise>
+        </choose>
+    </inbound>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

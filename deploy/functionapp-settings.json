@@ -1,0 +1,46 @@
+{
+    "settings": [
+        {
+            "name": "ConnectionString",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-${config-ApplicationName}-sql-connectionstring",
+            "isKeyVaultReference": "true"
+        },
+        {
+            "name": "ServiceBusConnection",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-servicebus-connectionstring",
+            "isKeyVaultReference": "true"
+        },
+        {
+            "name": "UniqueIdGeneratorStorageConnectionString",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-payments-blobstorage-connectionstring",
+            "isKeyVaultReference": true
+        },
+        {
+            "name": "RecaptchaKey",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-recaptcha-secretkey",
+            "isKeyVaultReference": true
+        },
+        {
+            "name": "EncryptionKey",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-srnEncryptionKey",
+            "isKeyVaultReference": true
+        },
+        {
+            "name": "CorrespondenceBlobStorageConnectionString",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-correspondence-blobstorage-connectionstring",
+            "isKeyVaultReference": true
+        },
+        {
+            "name": "ApplicationFullName",
+            "value": "${config-ShortLineOfBusiness}${ShortEnvironment}-${config-ProductName}-${config-ApplicationName}"
+        },
+        {
+            "name": "HealthCheckCRON",
+            "value": "0 */4 * * * *"
+        },
+		{
+			"name": "SendStatisticsEmailsCRON",
+			"value": "0 0 2 * * *"
+		}
+    ]
+}

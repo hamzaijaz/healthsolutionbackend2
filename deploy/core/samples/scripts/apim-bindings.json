@@ -1,0 +1,26 @@
+{
+  "apis": [
+    {
+      "name": "apiName1",
+      "operations": [
+        {
+          "name": "api1Operation1"
+        },
+        {
+          "name": "api1Operation2"
+        }
+      ]
+    },
+    {
+      "name": "apiName2",
+      "operations": [
+        {
+          "name": "api2Operation1"
+        },
+        {
+          "name": "api2Operation2"
+        }
+      ]
+    }
+  ]
+}
