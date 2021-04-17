@@ -54,7 +54,21 @@ namespace CapitalRaising.RightsIssues.Service.FunctionApp.HttpTriggers
                 context.FunctionName,
                 req,
                 queryArg,
-                (r) => new ObjectResult(_mapper.Map<Patient>(r.Patient)).ToTask());
+                (r) => new ObjectResult((r.Patient)).ToTask());
+        }
+
+        [FunctionName("GetAllPatients")]
+        public async Task<IActionResult> GetAllPatients(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = RouteConstants.Patient)] GetAllPatientsQuery queryArg,
+            HttpRequest req,
+            Microsoft.Azure.WebJobs.ExecutionContext context)
+        {
+            return await _httpFunctionMediator.ExecuteAsync<GetAllPatientsQuery, GetAllPatientsQueryResponse>(
+                context.InvocationId,
+                context.FunctionName,
+                req,
+                queryArg,
+                (r) => new ObjectResult((r.Patient)).ToTask());
         }
     }
 }

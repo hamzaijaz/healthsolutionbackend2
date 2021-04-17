@@ -17,7 +17,7 @@ using Entities = CapitalRaising.RightsIssues.Service.Domain.Entities;
 using CapitalRaising.RightsIssues.Service.Application.IntegrationTests;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Computershare.Common.UniqueIdGenerator;
+//using Computershare.Common.UniqueIdGenerator;
 using CapitalRaising.RightsIssues.Service.Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 
@@ -109,11 +109,6 @@ namespace Application.IntegrationTests
             var mockingCaptchaService = new Mock<ICaptchaVerifier>();
             mockingCaptchaService.Setup(_ => _.VerifyCaptcha(It.IsAny<string>())).ReturnsAsync(true);
             services.AddScoped(provider => mockingCaptchaService.Object);
-
-            // mocking UniqueIdGenerator 
-            var mockingUniqueIdGenerator = new Mock<IUniqueIdGenerator>();
-            mockingUniqueIdGenerator.Setup(_ => _.NextIdAsync(It.IsAny<string>())).ReturnsAsync(0);
-            services.AddScoped(provider => mockingUniqueIdGenerator.Object);
 
             //mocking CurrencyService
             var mockingCurrencyService = new Mock<ICurrencyService>();

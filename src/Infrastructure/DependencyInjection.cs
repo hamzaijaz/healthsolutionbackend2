@@ -47,7 +47,6 @@ namespace CapitalRaising.RightsIssues.Service.Infrastructure
             }
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
-            services.AddTransient<IAuditor, Auditor>();
             services.AddCsvFile(Assembly.GetExecutingAssembly());
 
             // note: the below dependencies use a scope context (per call scope)

@@ -10,8 +10,6 @@
     <PackageReference Include="Ardalis.GuardClauses" Version="1.4.2" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="Computershare.Common.UniqueIdGenerator" Version="1.0.12" />
-    <PackageReference Include="CPUTech.Payments.Contracts" Version="2.0.41" />
     <PackageReference Include="FluentValidation" Version="8.6.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="8.6.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />

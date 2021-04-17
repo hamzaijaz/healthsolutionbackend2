@@ -3,14 +3,25 @@
 
 #NOTE: BaseUrl/API Keys/User are read from the .vscode/settings.json file based on the selected environment in the RH bottom corner of the screen.
 
-@patientKey=2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03FD
+@baseUrl=http://localhost:7071/api
+@patientKey=2a3acc9e-13de-4fef-8af2-0fb2c70e03ff
+
+### GetPatients:- get all patients.
+GET {{baseUrl}}/patients
+//X-API-KEY: {{apikey}}
+//OriginatingUsername: {{user}}
+
+###GetPatient:
+GET  {{baseUrl}}/patients/{{patientKey}}
+//X-API-KEY: {{apikey}}
+//OriginatingUsername: {{user}}
 
 # Create Patient
-POST http://localhost:7071/api/patients
+POST {{baseUrl}}/patients
 Content-Type: application/json
 
 {
-    "PatientKey": "2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03FF",
+    "PatientKey": "2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03EF",
     "FirstName": "Shahrukh",
     "LastName": "Khan",
     "DateOfBirth": "13-05-1998",
@@ -74,15 +85,6 @@ Content-Type: application/json
   "allowOverSubscription": false,
 }
 
-### GetPatients:- get all patients.
-GET {{baseUrl}}/issuers/{{issuerKey}}/rightsissues
-X-API-KEY: {{apikey}}
-OriginatingUsername: {{user}}
-
-###GetPatient:
-GET  http://localhost:7071/api/patients/{{patientKey}}
-//X-API-KEY: {{apikey}}
-//OriginatingUsername: {{user}}
 
 ### GetRightsIssue:- Validation missing eventkey
 GET {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/69D8E658-C89C-48B9-BE4C-7ADEEF80A203

@@ -5,7 +5,6 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using Computershare.Common.UniqueIdGenerator;
 using Microsoft.Extensions.Configuration;
 
 namespace CapitalRaising.RightsIssues.Service.Application
@@ -18,13 +17,6 @@ namespace CapitalRaising.RightsIssues.Service.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestAuditBehavior<,>));
-
-            // add UniqueIdGenerator
-            var serviceProvider = services.BuildServiceProvider();
-            IConfiguration configuration = serviceProvider.GetService<IConfiguration>();
-            var connectionString = configuration.GetValue<string>("UniqueIdGeneratorStorageConnectionString");
-            services.AddUniqueIdGenerator(connectionString, "uniqueIds");
 
             services.AddAuditEnrichersFromAssembly(Assembly.GetExecutingAssembly());
 
