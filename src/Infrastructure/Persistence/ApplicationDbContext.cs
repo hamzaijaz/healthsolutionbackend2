@@ -13,7 +13,6 @@ using System.ComponentModel;
 using MyHealthSolution.Service.Domain.Entities;
 using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
-using MyHealthSolution.Service.Domain.CustomEntities;
 
 namespace MyHealthSolution.Service.Infrastructure.Persistence
 {
@@ -24,13 +23,6 @@ namespace MyHealthSolution.Service.Infrastructure.Persistence
         {
             _dateTime = dateTime;
         }
-
-        public virtual DbSet<Statistic> Statistics { get; set; }
-
-        public virtual DbSet<CustodianAcceptanceDetail> CustodianAcceptanceDetails { get; set; }
-
-        public virtual DbSet<OfferAcceptanceRecord> OfferAcceptanceRecords { get; set; }
-        public virtual DbSet<OfferPaymentRecord> OfferPaymentRecords { get; set; }
 
         public async Task BulkInsertAsync<T>(IList<T> entities, CancellationToken cancellationToken = default) where T : class
         {

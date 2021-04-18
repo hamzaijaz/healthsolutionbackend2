@@ -17,7 +17,6 @@ using Entities = MyHealthSolution.Service.Domain.Entities;
 using MyHealthSolution.Service.Application.IntegrationTests;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-//using Computershare.Common.UniqueIdGenerator;
 using MyHealthSolution.Service.Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 
@@ -81,13 +80,6 @@ namespace Application.IntegrationTests
             services.Remove(busEndpointFactory);
             services.AddSingleton<IBusEndpointFactory, InMemoryServiceBusEndpointFactory>();
 
-            // BlobStorage
-            var blobStore = services.FirstOrDefault(a => a.ServiceType == typeof(IBlobDataStore));
-            // remove wired IBlobDataStore
-            services.Remove(blobStore);
-            // replace it with InMemory version
-            services.AddTransient<IBlobDataStore, InMemoryBlobDataStore>();
-
             // setup call context
             var existingCallContext = services.FirstOrDefault(d =>
                 d.ServiceType == typeof(ICallContext));
@@ -109,11 +101,6 @@ namespace Application.IntegrationTests
             var mockingCaptchaService = new Mock<ICaptchaVerifier>();
             mockingCaptchaService.Setup(_ => _.VerifyCaptcha(It.IsAny<string>())).ReturnsAsync(true);
             services.AddScoped(provider => mockingCaptchaService.Object);
-
-            //mocking CurrencyService
-            var mockingCurrencyService = new Mock<ICurrencyService>();
-            mockingCurrencyService.Setup(_ => _.GetSymbol(It.IsAny<string>())).Returns("$");
-            services.AddScoped(provider => mockingCurrencyService.Object);
         }
 
         private static void EnsureDatabase()
@@ -124,24 +111,6 @@ namespace Application.IntegrationTests
 
             if(context.Database.IsSqlServer())
                 context.Database.EnsureCreated();
-        }
-
-        public static string EncryptString(string value)
-        {
-            using var scope = _scopeFactory.CreateScope();
-
-            var encryptionService = scope.ServiceProvider.GetService<IEncryptionService>();
-
-            return encryptionService.Encrypt(value);
-        }
-
-        public static string DecryptString(string value)
-        {
-            using var scope = _scopeFactory.CreateScope();
-
-            var encryptionService = scope.ServiceProvider.GetService<IEncryptionService>();
-
-            return encryptionService.Decrypt(value);
         }
 
         // NOTE: We are passing the XUnit TestHelper here due to logging the validation exceptions.
@@ -358,38 +327,6 @@ namespace Application.IntegrationTests
             return Task.CompletedTask;
         }
 
-        /// <summary>
-        /// ReadBolbContent based on provided Type of T
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="folder"></param>
-        /// <param name="filename"></param>
-        /// <returns></returns>
-        public static async Task<T> ReadBlobContent<T>(string folder, string filename)
-        {
-            using var scope = _scopeFactory.CreateScope();
-            var blobDataStore = scope.ServiceProvider.GetService<IBlobDataStore>() as InMemoryBlobDataStore;
-
-
-            var stream = await blobDataStore.DownloadFileAsync(folder, filename);
-            if (stream == null) return default(T);
-
-            stream.Position = 0;
-            JsonSerializer serializer = new JsonSerializer();
-            using StreamReader sr = new StreamReader(stream);
-            using JsonTextReader reader = new JsonTextReader(sr);
-
-            return serializer.Deserialize<T>(reader);
-        }
-
-        public static async Task WriteBlobContent(string folder, string filename, Stream data)
-        {
-            using var scope = _scopeFactory.CreateScope();
-            var blobDataStore = scope.ServiceProvider.GetService<IBlobDataStore>() as InMemoryBlobDataStore;
-            await blobDataStore.UploadFileAsync(folder, filename, data);
-
-        }
-
         public Task RunAfterAnyTests()
         {
             return ResetState();
@@ -398,18 +335,6 @@ namespace Application.IntegrationTests
         public void Dispose()
         {
             RunAfterAnyTests().Wait();
-        }
-
-        public static async Task<IEnumerable<TRecord>> ReadCsvContent<TRecord>(byte[] content)
-    where TRecord : class
-        {
-            using var scope = _scopeFactory.CreateScope();
-            var csvFileReader = scope.ServiceProvider.GetService<ICsvFileReader>();
-
-            // Read and return the content
-            using Stream stream = new MemoryStream(content);
-            var records = await csvFileReader.ReadAsync<TRecord>(stream);
-            return records;
         }
     }
 

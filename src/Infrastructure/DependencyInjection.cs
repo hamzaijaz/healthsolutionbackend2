@@ -4,9 +4,7 @@ using System.Linq;
 using System.Reflection;
 using MyHealthSolution.Service.Application.Common.Interfaces;
 using MyHealthSolution.Service.Infrastructure.Context;
-using MyHealthSolution.Service.Infrastructure.Files;
 using MyHealthSolution.Service.Infrastructure.Persistence;
-using MyHealthSolution.Service.Infrastructure.Persistence.Configurations;
 using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using MyHealthSolution.Service.Infrastructure.Services;
 using MyHealthSolution.Service.Infrastructure.Telemetry;
@@ -53,25 +51,13 @@ namespace MyHealthSolution.Service.Infrastructure
             services.AddScoped<ICallContext, MutableCallContext>();
             services.AddScoped<IMessageEnricher, AzureServiceBusCausalityEnricher>();
 
-            services.Configure<BlobStoreConfig>(configuration);
-            services.AddTransient<IBlobDataStore, AzureBlobStorageDataStore>();
-
             services.AddSingleton<JsonSerializer>();
-
-            services.AddSingleton<IZipFileBuilder, ZipFileBuilder>();
-
-            services.AddSingleton<ICurrencyService, CurrencyService>();
 
             var recaptchaConfig = configuration.Get<RecaptchaConfig>();
             services.AddSingleton(recaptchaConfig);
 
             services.AddSingleton<IServiceBusConfiguration, ServiceBusConfiguration>();
             services.AddSingleton<IBusEndpointFactory, AzureServiceBusEndpointFactory>();
-
-            var encryptionConfig = configuration.Get<EncryptionConfig>();
-            services.AddSingleton(encryptionConfig);
-            services.AddTransient<IEncryptionService, EncryptionService>();
-
 
             services.AddAppInsights(configuration);
             services.AddHealthChecks();
@@ -100,9 +86,6 @@ namespace MyHealthSolution.Service.Infrastructure
             {
                 services.AddTransient(csvClassMap, classMap);
             }
-
-            services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
-            services.AddTransient<ICsvFileReader, CsvFileReader>();
 
             return services;
         }

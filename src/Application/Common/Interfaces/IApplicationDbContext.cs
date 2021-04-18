@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using Entities = MyHealthSolution.Service.Domain.Entities;
+﻿using Entities = MyHealthSolution.Service.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
-using MyHealthSolution.Service.Domain.Entities;
-using MyHealthSolution.Service.Domain.CustomEntities;
-using System;
 
 namespace MyHealthSolution.Service.Application.Common.Interfaces
 {

@@ -2,13 +2,10 @@
 using Microsoft.Azure.WebJobs;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using MyHealthSolution.Service.FunctionApp.Models;
-using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using MyHealthSolution.Service.Application.Patients.Queries;
-using MyHealthSolution.Service.Domain.Entities;
 using MyHealthSolution.Service.Application.Patients.Commands.CreatePatient;
 
 namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
@@ -32,9 +29,6 @@ namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
             HttpRequest req,
             Microsoft.Azure.WebJobs.ExecutionContext context)
         {
-            // Map from our incoming request to the command
-            //var command = _mapper.Map<CreatePatientCommand>(request);
-
             return await _httpFunctionMediator.ExecuteAsync<CreatePatientCommand, CreatePatientResponse>(
                 context.InvocationId,
                 context.FunctionName,
