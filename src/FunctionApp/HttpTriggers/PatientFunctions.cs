@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using MyHealthSolution.Service.Application.Patients.Queries;
 using MyHealthSolution.Service.Application.Patients.Commands.CreatePatient;
+using MyHealthSolution.Service.Application.Patients.Commands.UpdatePatient;
 
 namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
 {
@@ -35,6 +36,20 @@ namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
                 req,
                 request,
                 (r) => new CreatedObjectResult("patients", r.Patient.PatientKey.ToString(), r.Patient).ToTask());
+        }
+
+        [FunctionName("UpdatePatient")]
+        public async Task<IActionResult> UpdatePatient(
+            [HttpTrigger(AuthorizationLevel.Function, "put", Route = RouteConstants.Patient + "{patientKey}")] UpdatePatientCommand request,
+            HttpRequest req,
+            Microsoft.Azure.WebJobs.ExecutionContext context)
+        {
+            return await _httpFunctionMediator.ExecuteAsync<UpdatePatientCommand, UpdatePatientResponse>(
+                context.InvocationId,
+                context.FunctionName,
+                req,
+                request,
+                (r) => new ObjectResult(r.Patient).ToTask());
         }
 
         [FunctionName("GetPatient")]

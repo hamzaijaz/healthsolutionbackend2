@@ -2,7 +2,7 @@
 # https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 @baseUrl=http://localhost:7071/api
-@patientKey=2a3acc9e-13de-4fef-8af2-0fb2c70e03ff
+@patientKey=1F656244-767A-4A82-A065-40B640224F3B
 
 ### GetPatients:- get all patients.
 GET {{baseUrl}}/patients
@@ -17,6 +17,24 @@ Content-Type: application/json
 {
     "PatientKey": "2A3ACC9E-13DE-4FEF-8AF2-0FB2C70E03EF",
     "FirstName": "Shahrukh",
+    "LastName": "Khan",
+    "DateOfBirth": "13-05-1998",
+    "Gender": "Male",
+    "StreetAddress": "76 Collins Road",
+    "Suburb": "Richmond",
+    "Postcode": "3000",
+    "HealthCoverType": "Bupa",
+    "PolicyNumber": "123456",
+	"RecaptchaResponse": "abcd1234"
+}
+
+### Update Patient
+PUT {{baseUrl}}/patients{{patientKey}}
+Content-Type: application/json
+
+{
+    "PatientKey": "1F656244-767A-4A82-A065-40B640224F3B",
+    "FirstName": "Amir",
     "LastName": "Khan",
     "DateOfBirth": "13-05-1998",
     "Gender": "Male",
