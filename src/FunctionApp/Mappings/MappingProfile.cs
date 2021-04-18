@@ -1,12 +1,7 @@
 using System;
 using AutoMapper;
 using MyHealthSolution.Service.Application.Patients.Models;
-//using MyHealthSolution.Service.Application.MyHealthSolution.Commands.CreateRightsIssue;
-//using MyHealthSolution.Service.Application.MyHealthSolution.Commands.UpdateRightsIssue;
-//using MyHealthSolution.Service.Application.MyHealthSolution.Models;
-//using MyHealthSolution.Service.Application.MyHealthSolution.Queries;
 using MyHealthSolution.Service.Domain.Entities;
-using MyHealthSolution.Service.FunctionApp.Models;
 
 namespace MyHealthSolution.Service.FunctionApp.Mappings
 {
