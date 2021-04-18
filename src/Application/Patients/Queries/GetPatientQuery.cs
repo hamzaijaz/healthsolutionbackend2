@@ -39,27 +39,10 @@ namespace MyHealthSolution.Service.Application.Patients.Queries
                     throw new NotFoundException(nameof(Patient), request.PatientKey);
                 }
 
-                // TODO: Mapping of the DTO is done manually here rather than using AutoMapper
-                // due to the need to map data from two entities. There may be a technique for
-                // implementing this with AutoMapper.
-                var response = new GetPatientQueryResponse
+                return new GetPatientQueryResponse
                 {
-                    Patient = new PatientDto
-                    {
-                        FirstName = patient.FirstName,
-                        LastName = patient.LastName,
-                        PatientKey = patient.PatientKey,
-                        Gender = patient.Gender,
-                        DateOfBirth = patient.DateOfBirth,
-                        HealthCoverType = patient.HealthCoverType,
-                        Postcode = patient.Postcode,
-                        PolicyNumber = patient.PolicyNumber,
-                        StreetAddress = patient.StreetAddress,
-                        Suburb = patient.Suburb
-                    }
+                    Patient = _mapper.Map<PatientDto>(patient)
                 };
-
-                return response;
             }
         }
 

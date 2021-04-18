@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
 using MyHealthSolution.Service.Application.Common.Interfaces;
 using MediatR;
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
-using MyHealthSolution.Service.Application.Common.Exceptions;
 using MyHealthSolution.Service.Domain.Entities;
 using MyHealthSolution.Service.Application.Patients.Models;
 
@@ -33,13 +30,9 @@ namespace MyHealthSolution.Service.Application.Patients.Queries
                 patients = await _dbContext.Patients
                                         .AsNoTracking().ToListAsync();
 
-
-                // TODO: Mapping of the DTO is done manually here rather than using AutoMapper
-                // due to the need to map data from two entities. There may be a technique for
-                // implementing this with AutoMapper.
                 var response = new GetAllPatientsQueryResponse
                 {
-                    Patient = patients.Select(patient => new PatientDto()
+                    Patients = patients.Select(patient => new PatientDto()
                     {
                         FirstName = patient.FirstName,
                         LastName = patient.LastName,
@@ -56,6 +49,5 @@ namespace MyHealthSolution.Service.Application.Patients.Queries
                 return response;
             }
         }
-
     }
 }

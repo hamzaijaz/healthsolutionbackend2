@@ -62,7 +62,7 @@ namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
                 context.FunctionName,
                 req,
                 queryArg,
-                (r) => new ObjectResult((r.Patient)).ToTask());
+                (r) => new ObjectResult((r.Patients)).ToTask());
         }
     }
 }

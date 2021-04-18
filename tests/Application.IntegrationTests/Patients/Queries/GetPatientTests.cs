@@ -24,10 +24,21 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Queries
         {
             var query = new GetPatientQuery();
 
+            //sending request without a PatientKey
             FluentActions.Invoking(() =>
                 Testing.SendAsync(query, this.Output)).Should().Throw<ValidationException>();
         }
 
+        [Fact]
+        public void ShouldReturnNotFoundException()
+        {
+            var query = new GetPatientQuery();
+            query.PatientKey = Guid.NewGuid();
+
+            //sending request with a PatientKey but patient does not exist in database
+            FluentActions.Invoking(() =>
+                Testing.SendAsync(query, this.Output)).Should().Throw<NotFoundException>();
+        }
         #endregion
 
         [Fact]
@@ -35,12 +46,8 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Queries
         {
             var command = CreatePatientCommand();
 
-            // Send command
+            // Create a new patient first
             var result = await Testing.SendAsync(command, this.Output);
-
-            result.Should().NotBeNull();
-            result.Patient.Should().NotBeNull();
-            result.Patient.FirstName.Should().Be("Mike");
 
             var patientKey = result.Patient.PatientKey;
 

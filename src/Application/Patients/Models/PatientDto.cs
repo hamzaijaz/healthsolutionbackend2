@@ -4,7 +4,6 @@ using MyHealthSolution.Service.Domain.Entities;
 using System;
 using Entities = MyHealthSolution.Service.Domain.Entities;
 
-
 namespace MyHealthSolution.Service.Application.Patients.Models
 {
     public class PatientDto : IMapFrom<Entities.Patient>
