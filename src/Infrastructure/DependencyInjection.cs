@@ -7,7 +7,6 @@ using MyHealthSolution.Service.Infrastructure.Context;
 using MyHealthSolution.Service.Infrastructure.Persistence;
 using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using MyHealthSolution.Service.Infrastructure.Services;
-using MyHealthSolution.Service.Infrastructure.Telemetry;
 using HealthChecks.SqlServer;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Channel;
@@ -101,7 +100,6 @@ namespace MyHealthSolution.Service.Infrastructure
                     new InMemoryChannel { EndpointAddress = endpointAddress });
                 return new TelemetryClient(telemetryConfiguration);
             });
-            services.AddSingleton<ITelemetryService, TelemetryService>();
 
             return services;
         }

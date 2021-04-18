@@ -1,4 +1,24 @@
-# healthsolutionbackend2
+# MyHealthSolution.Service.sln
+
+In order to run this project, certain things need to be set up
+1. You need to have Visual Studio on your PC
+2. SQL Server Management Studio
+
+Load the project in visual studio as "MyHealthSolution.Service.sln" as entry point
+
+Create a new Database in SQL Server Management Studio
+Choose servername: (LocalDb)\MSSQLLocalDB
+and Database name: my_health_solution
+Another database also needs to be created for integration tests: my_health_solution_integration_tests
+
+Run a new query, and paste script from following file: \sql\schema\002_CreatePatientTable.sql
+Run this script for both my_health_solution and my_health_solution_integration_tests
+
+Now we come towards running the function app
+When you load the project in Visual Studio, do select "FunctionApp" project from top before debugging
+Then start debugging
+
+also run the front end website.
 
 run powershell as admin
 May need to do this before running powershell script: Set-ExecutionPolicy RemoteSigned
