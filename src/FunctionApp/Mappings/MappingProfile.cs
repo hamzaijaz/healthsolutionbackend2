@@ -14,16 +14,6 @@ namespace MyHealthSolution.Service.FunctionApp.Mappings
             //    .ForMember(x => x.EventKey, s => s.MapFrom(source => source.EventKey.GetValueOrDefault(Guid.NewGuid())));
             //CreateMap<RightsIssueRequest, CreateRightsIssueCommand>()
             //    .ForMember(x => x.RightsIssue, s => s.MapFrom(source => source));
-
-            //CreateMap<RightsIssueRequest, UpdateRightsIssueCommand>()
-            //    .ForMember(x => x.RightsIssue, s => s.MapFrom(source => source));
-
-            //CreateMap<PatientDto, Patient>()
-            //    .ForAllOtherMembers(x => x.MapAtRuntime());
-
-            //CreateMap<Patient, PatientDto>()
-            //    .ForAllOtherMembers(x => x.MapAtRuntime());
-
         }
     }
 }

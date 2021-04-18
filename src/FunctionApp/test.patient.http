@@ -1,20 +1,14 @@
 # REQUIRES THE REST CLIENT EXTENSION
 # https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-#NOTE: BaseUrl/API Keys/User are read from the .vscode/settings.json file based on the selected environment in the RH bottom corner of the screen.
-
 @baseUrl=http://localhost:7071/api
 @patientKey=2a3acc9e-13de-4fef-8af2-0fb2c70e03ff
 
 ### GetPatients:- get all patients.
 GET {{baseUrl}}/patients
-//X-API-KEY: {{apikey}}
-//OriginatingUsername: {{user}}
 
 ###GetPatient:
 GET  {{baseUrl}}/patients/{{patientKey}}
-//X-API-KEY: {{apikey}}
-//OriginatingUsername: {{user}}
 
 # Create Patient
 POST {{baseUrl}}/patients
@@ -32,28 +26,3 @@ Content-Type: application/json
     "HealthCoverType": "Bupa",
     "PolicyNumber": "123456"
 }
-
-# ### Update patient
-# PUT {{baseUrl}}/issuers/{{issuerKey}}/rightsissues/{{eventKey}}
-# //X-API-KEY: {{apikey}}
-# //OriginatingUsername: {{user}}
-# Content-Type: application/json
-
-# {
-#   "name": "FOrth Attempt updated 901",
-#   "rightsIssueType": "Non-Renounceable",
-#   "pricePerShare": 2,
-#   "currencyCode": "AUD",
-#   "newSharesRatio": 1,
-#   "forSharesHeldRatio": 10,
-#   "amountToBeRaised": 4000000,
-#   "numberOfSharesToBeIssued": 1000000,
-#   "acceptedTermsAndConditions": true,
-#   "announcementDate": "2020-10-02",
-#   "exDate": "2020-10-03",
-#   "recordDate": "2020-10-04",
-#   "offerOpenDate": "2020-10-07",
-#   "offerCloseDate": "2020-10-14",
-#   "issueDate": "2020-10-22",
-#   "allowOverSubscription": false,
-# }
