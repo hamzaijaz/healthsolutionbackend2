@@ -13,10 +13,7 @@ using System.Linq.Expressions;
 using Respawn;
 using MyHealthSolution.Service.Application.Common.Interfaces;
 using Moq;
-using Entities = MyHealthSolution.Service.Domain.Entities;
-using MyHealthSolution.Service.Application.IntegrationTests;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using MyHealthSolution.Service.Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 

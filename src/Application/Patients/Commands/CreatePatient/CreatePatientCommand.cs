@@ -3,13 +3,8 @@ using AutoMapper;
 using MyHealthSolution.Service.Application.Common.Exceptions;
 using MyHealthSolution.Service.Application.Common.Interfaces;
 using MyHealthSolution.Service.Application.Patients.Models;
-using MyHealthSolution.Service.Domain.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -28,24 +23,36 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
         public string Postcode { get; set; }
         public string HealthCoverType { get; set; }
         public string PolicyNumber { get; set; }
+        public string RecaptchaResponse { get; set; }
 
         public class CreatePatientCommandHandler : IRequestHandler<CreatePatientCommand, CreatePatientResponse>
         {
             private readonly IApplicationDbContext _dbContext;
             private readonly IMapper _mapper;
+            private readonly ICaptchaVerifier _captchaVerifier;
 
             public CreatePatientCommandHandler(IApplicationDbContext dbContext,
-                                                IMapper mapper)
+                                                IMapper mapper,
+                                                ICaptchaVerifier captchaVerifier)
             {
                 Guard.Against.Null(dbContext, nameof(dbContext));
                 Guard.Against.Null(mapper, nameof(mapper));
+                Guard.Against.Null(captchaVerifier, nameof(captchaVerifier));
 
                 _dbContext = dbContext;
                 _mapper = mapper;
+                _captchaVerifier = captchaVerifier;
             }
 
             public async Task<CreatePatientResponse> Handle(CreatePatientCommand request, CancellationToken cancellationToken)
             {
+                //Validating reCaptcha
+                var captchaPassed = await _captchaVerifier.VerifyCaptcha(request.RecaptchaResponse);
+                if (!captchaPassed)
+                { 
+                    throw new BadRequestException("reCAPTCHA verification failed."); 
+                }
+
                 var patient = new Domain.Entities.Patient
                 {
                     FirstName = request.FirstName,

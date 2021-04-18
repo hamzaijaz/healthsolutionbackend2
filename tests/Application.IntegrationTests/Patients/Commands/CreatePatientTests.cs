@@ -1,15 +1,11 @@
 ﻿using Application.IntegrationTests;
 using MyHealthSolution.Service.Application.Patients.Commands.CreatePatient;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 using MyHealthSolution.Service.Application.Common.Exceptions;
 using System.Threading.Tasks;
 using MyHealthSolution.Service.Application.Patients.Queries;
-using Entities = MyHealthSolution.Service.Domain.Entities;
 
 namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Commands
 {
@@ -44,6 +40,8 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Command
                 .Should()
                 .Throw<ValidationException>();
         }
+
+        //can write similar validation tests for all other fields
         #endregion
 
         [Fact]
@@ -90,7 +88,8 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Command
                 PolicyNumber = "123456",
                 Suburb = "Richmond",
                 StreetAddress = "33 Punt Road",
-                HealthCoverType = "Bupa"
+                HealthCoverType = "Bupa",
+                RecaptchaResponse = "someText"
             };
         }
     }

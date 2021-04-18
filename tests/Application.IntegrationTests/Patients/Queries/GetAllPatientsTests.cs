@@ -118,7 +118,8 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Queries
                 PolicyNumber = "123456",
                 Suburb = "Richmond",
                 StreetAddress = "33 Punt Road",
-                HealthCoverType = "Bupa"
+                HealthCoverType = "Bupa",
+                RecaptchaResponse = "someText"
             };
         }
     }

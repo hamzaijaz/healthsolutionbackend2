@@ -7,23 +7,35 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
         public CreatePatientCommandValidator()
         {
             RuleFor(v => v.FirstName)
-                .NotEmpty();
+                .NotNull().WithMessage("FirstName must not be null")
+                .NotEmpty().WithMessage("FirstName must not be empty");
             RuleFor(v => v.LastName)
-                .NotEmpty();
+                .NotNull().WithMessage("LastName must not be null")
+                .NotEmpty().WithMessage("LastName must not be empty");
             RuleFor(v => v.DateOfBirth)
-                .NotEmpty();
+                .NotNull().WithMessage("DateOfBirth must not be null")
+                .NotEmpty().WithMessage("DateOfBirth must not be empty");
             RuleFor(v => v.Gender)
-                .NotEmpty();
+                .NotNull().WithMessage("Gender must not be null")
+                .NotEmpty().WithMessage("Gender must not be empty");
             RuleFor(v => v.HealthCoverType)
-                .NotEmpty();
+                .NotNull().WithMessage("HealthCoverType must not be null")
+                .NotEmpty().WithMessage("HealthCoverType must not be empty");
             RuleFor(v => v.Postcode)
-                .NotEmpty();
+                .NotNull().WithMessage("Postcode must not be null")
+                .NotEmpty().WithMessage("Postcode must not be empty");
             RuleFor(v => v.StreetAddress)
-                .NotEmpty();
+                .NotNull().WithMessage("StreetAddress must not be null")
+                .NotEmpty().WithMessage("StreetAddress must not be empty");
             RuleFor(v => v.Suburb)
-                .NotEmpty();
+                .NotNull().WithMessage("Suburb must not be null")
+                .NotEmpty().WithMessage("Suburb must not be empty");
             RuleFor(v => v.PolicyNumber)
-                .NotEmpty();
+                .NotNull().WithMessage("PolicyNumber must not be null")
+                .NotEmpty().WithMessage("PolicyNumber must not be empty");
+            RuleFor(v => v.RecaptchaResponse)
+                .NotNull().WithMessage("RecaptchaResponse must not be null")
+                .NotEmpty().WithMessage("RecaptchaResponse must not be empty");
         }
     }
 }
