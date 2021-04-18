@@ -31,10 +31,9 @@ namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Patie
         #endregion
 
         [Fact]
-        public async Task ShouldGetReturnPatient()
+        public async Task ShouldReturnPatient()
         {
-            var patientKey = Guid.NewGuid();
-            var command = CreatePatientCommand(patientKey);
+            var command = CreatePatientCommand();
 
             // Send command
             var result = await Testing.SendAsync(command, this.Output);
@@ -42,6 +41,9 @@ namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Patie
             result.Should().NotBeNull();
             result.Patient.Should().NotBeNull();
             result.Patient.FirstName.Should().Be("Mike");
+
+            var patientKey = result.Patient.PatientKey;
+
             // Use a query to retrieve the result to confirm it was stored
             var query = new GetPatientQuery();
             query.PatientKey = patientKey;
@@ -61,7 +63,7 @@ namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Patie
             queryResult.Patient.PatientKey.Should().Be(patientKey);
         }
 
-        private CreatePatientCommand CreatePatientCommand(Guid? patientKey = null)
+        private CreatePatientCommand CreatePatientCommand()
         {
             return new CreatePatientCommand
             {
