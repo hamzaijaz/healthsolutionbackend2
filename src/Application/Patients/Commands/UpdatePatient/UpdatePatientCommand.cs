@@ -50,7 +50,7 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.UpdatePatient
                 {
                     throw new NotFoundException(nameof(Patient), request.PatientKey);
                 }
-
+                
                 existingPatient.FirstName = request.FirstName;
                 existingPatient.LastName = request.LastName;
                 existingPatient.Gender = request.Gender;

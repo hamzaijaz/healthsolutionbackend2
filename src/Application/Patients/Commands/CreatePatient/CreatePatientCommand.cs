@@ -45,11 +45,11 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
             public async Task<CreatePatientResponse> Handle(CreatePatientCommand request, CancellationToken cancellationToken)
             {
                 //Validating reCaptcha
-                //var captchaPassed = await _captchaVerifier.VerifyCaptcha(request.RecaptchaResponse);
-                //if (!captchaPassed)
-                //{ 
-                //    throw new BadRequestException("reCAPTCHA verification failed."); 
-                //}
+                var captchaPassed = await _captchaVerifier.VerifyCaptcha(request.RecaptchaResponse);
+                if (!captchaPassed)
+                {
+                    throw new BadRequestException("reCAPTCHA verification failed.");
+                }
 
                 var patient = new Domain.Entities.Patient
                 {
