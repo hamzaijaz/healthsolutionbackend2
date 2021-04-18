@@ -1,20 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Reflection;
 using MyHealthSolution.Service.Application.Common.Interfaces;
 using MyHealthSolution.Service.Infrastructure.Context;
 using MyHealthSolution.Service.Infrastructure.Persistence;
 using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using MyHealthSolution.Service.Infrastructure.Services;
-using HealthChecks.SqlServer;
-using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Channel;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 
 namespace MyHealthSolution.Service.Infrastructure
@@ -44,8 +37,6 @@ namespace MyHealthSolution.Service.Infrastructure
             }
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
-            services.AddCsvFile(Assembly.GetExecutingAssembly());
-
             // note: the below dependencies use a scope context (per call scope)
             services.AddScoped<ICallContext, MutableCallContext>();
             services.AddScoped<IMessageEnricher, AzureServiceBusCausalityEnricher>();
@@ -58,7 +49,6 @@ namespace MyHealthSolution.Service.Infrastructure
             services.AddSingleton<IServiceBusConfiguration, ServiceBusConfiguration>();
             services.AddSingleton<IBusEndpointFactory, AzureServiceBusEndpointFactory>();
 
-            services.AddAppInsights(configuration);
             services.AddHealthChecks();
 
             //ADD HttpClient
@@ -67,50 +57,6 @@ namespace MyHealthSolution.Service.Infrastructure
                 x.BaseAddress = new Uri("https://www.google.com/recaptcha/api/siteverify");
                 x.DefaultRequestHeaders.Add("accept", "application/json");
             });
-
-            return services;
-        }
-
-        private static IServiceCollection AddCsvFile(this IServiceCollection services, Assembly assembly)
-        {
-            // Register all class maps in the assembly
-            var csvClassMap = typeof(CsvHelper.Configuration.ClassMap);
-
-            var classMapTypes = assembly
-                .GetExportedTypes()
-                .Where(t => t.IsSubclassOf(csvClassMap))
-                .ToList();
-
-            foreach (var classMap in classMapTypes)
-            {
-                services.AddTransient(csvClassMap, classMap);
-            }
-
-            return services;
-        }
-
-        private static IServiceCollection AddAppInsights(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton<TelemetryClient>((serviceProvider) =>
-            {
-                const string endpointAddress = "https://dc.services.visualstudio.com/v2/track";
-                var instrumentationKey = configuration.GetValue<string>("APPINSIGHTS_INSTRUMENTATIONKEY");
-                var telemetryConfiguration = new TelemetryConfiguration(
-                    instrumentationKey,
-                    new InMemoryChannel { EndpointAddress = endpointAddress });
-                return new TelemetryClient(telemetryConfiguration);
-            });
-
-            return services;
-        }
-
-        private static IServiceCollection AddHealthChecks(this IServiceCollection services)
-        {
-            var serviceProvider = services.BuildServiceProvider();
-            var config = serviceProvider.GetService<IConfiguration>();
-
-            var sqlServerHealthCheck = new SqlServerHealthCheck(config["ConnectionString"], "SELECT 1;");
-            services.AddSingleton<IHealthCheck>(sqlServerHealthCheck);
 
             return services;
         }
