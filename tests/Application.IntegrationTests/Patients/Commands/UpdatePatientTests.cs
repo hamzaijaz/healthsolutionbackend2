@@ -43,6 +43,19 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Command
                 .Throw<ValidationException>();
         }
 
+        [Fact]
+        public void ShouldReturnNotFoundException()
+        {
+            // arrange
+            var command = UpdatePatientCommand();
+            command.PatientKey = Guid.NewGuid();
+            // Act ,Assert
+            FluentActions.Invoking(() =>
+                    Testing.SendAsync(command, this.Output))
+                .Should()
+                .Throw<NotFoundException>();
+        }
+
         //can write similar validation tests for all other fields
         #endregion
 
