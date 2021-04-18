@@ -12,5 +12,9 @@
     //"Recaptcha:SecretKey": "6Lfe08QUAAAAAG05SI3nd54w2WyOuoOqoDpBp4_U",
     "RecaptchaConfig:RecaptchaKey": "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe",
     "RecaptchaKey": "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*"
   }
 }

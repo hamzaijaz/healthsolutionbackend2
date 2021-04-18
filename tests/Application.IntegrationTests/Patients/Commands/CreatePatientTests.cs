@@ -74,7 +74,6 @@ namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Patie
         {
             return new CreatePatientCommand
             {
-                PatientKey = patientKey ?? Guid.NewGuid(),
                 FirstName = "Mike",
                 LastName = "Hussey",
                 DateOfBirth = "13-04-1995",

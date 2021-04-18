@@ -19,7 +19,6 @@ namespace CapitalRaising.RightsIssues.Service.Application.Patients.Commands.Crea
     {
         //public PatientDto Patient { get; set; }
 
-        public Guid? PatientKey { get; set; } //optional
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
@@ -47,21 +46,11 @@ namespace CapitalRaising.RightsIssues.Service.Application.Patients.Commands.Crea
 
             public async Task<CreatePatientResponse> Handle(CreatePatientCommand request, CancellationToken cancellationToken)
             {
-                var existingPatient = await _dbContext.Patients
-                                        .AsNoTracking()
-                                        .Where(_ => _.PatientKey == request.PatientKey)
-                                        .FirstOrDefaultAsync();
-
-                if (existingPatient != null)
-                {
-                    throw new DuplicateItemException(nameof(Patient));
-                }
-
                 var patient = new Domain.Entities.Patient
                 {
                     FirstName = request.FirstName,
                     LastName = request.LastName,
-                    PatientKey = request.PatientKey.GetValueOrDefault(Guid.NewGuid()),
+                    PatientKey = Guid.NewGuid(),
                     Gender = request.Gender,
                     DateOfBirth = request.DateOfBirth,
                     HealthCoverType = request.HealthCoverType,
