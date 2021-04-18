@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus;
+using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 using FluentAssertions;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.ServiceBus
 {
     public class ServiceBusConfigurationTests
     {

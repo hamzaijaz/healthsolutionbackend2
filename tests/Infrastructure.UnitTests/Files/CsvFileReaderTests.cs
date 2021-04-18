@@ -8,9 +8,9 @@ using Xunit;
 using CsvHelper.Configuration;
 using FluentAssertions;
 using System.Globalization;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Files;
+using MyHealthSolution.Service.Infrastructure.Files;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Files
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Files
 {
     public class CsvFileReaderTests
     {

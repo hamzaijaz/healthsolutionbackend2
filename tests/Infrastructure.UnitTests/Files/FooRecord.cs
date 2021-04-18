@@ -4,7 +4,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Files
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Files
 {
     public class FooRecord
     {

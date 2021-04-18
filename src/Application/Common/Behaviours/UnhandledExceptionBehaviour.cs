@@ -4,7 +4,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Behaviours
+namespace MyHealthSolution.Service.Application.Common.Behaviours
 {
     public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
@@ -25,7 +25,7 @@ namespace CapitalRaising.RightsIssues.Service.Application.Common.Behaviours
             {
                 var requestName = typeof(TRequest).Name;
 
-                _logger.LogError(ex, "CapitalRaising.RightsIssues.Service Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
+                _logger.LogError(ex, "MyHealthSolution.Service Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
 
                 throw;
             }

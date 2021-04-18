@@ -1,6 +1,6 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
+﻿using MyHealthSolution.Service.Application.Patients.Models;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Queries
+namespace MyHealthSolution.Service.Application.Patients.Queries
 {
     public class GetPatientQueryResponse
     {

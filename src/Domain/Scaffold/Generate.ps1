@@ -1,4 +1,4 @@
-$ApplicationName="RightsIssues"
+$ApplicationName="MyHealthSolution"
 $DatabaseName="my_health_solution"
 $ConnectionString="Server=(LocalDB)\MSSQLLocalDB;Database=$($DatabaseName);Trusted_Connection=True;"
 # Get a list of tables from the database, exclude the schema versions table or any other table with underscore.

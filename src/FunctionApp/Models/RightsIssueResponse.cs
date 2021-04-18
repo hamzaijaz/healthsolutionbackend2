@@ -1,8 +1,8 @@
 
 //using System.Collections.Generic;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Models;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Models;
 
-//namespace  CapitalRaising.RightsIssues.Service.FunctionApp.Models
+//namespace  MyHealthSolution.Service.FunctionApp.Models
 //{
 //    public class RightsIssueResponse
 //    {

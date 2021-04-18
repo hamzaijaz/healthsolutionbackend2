@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System;
 
-[assembly: InternalsVisibleTo("CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests")]
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+[assembly: InternalsVisibleTo("MyHealthSolution.Service.Infrastructure.UnitTests")]
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     /// <summary>
     /// Loads the service bus configuration. This class supports a convention where you can define default settings and

@@ -1,7 +1,7 @@
-﻿using CapitalRaising.RightsIssues.Service.Infrastructure.Services;
+﻿using MyHealthSolution.Service.Infrastructure.Services;
 using Xunit;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Services
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Services
 {
     public class EncryptionTests
     {

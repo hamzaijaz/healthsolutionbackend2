@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Interfaces
+namespace MyHealthSolution.Service.Application.Common.Interfaces
 {
     public interface ICallContext
     {

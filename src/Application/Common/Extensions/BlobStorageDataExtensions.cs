@@ -1,9 +1,9 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
 using Newtonsoft.Json;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Extensions
+namespace MyHealthSolution.Service.Application.Common.Extensions
 {
     /// <summary>
     /// BlobStorageDataExtensions

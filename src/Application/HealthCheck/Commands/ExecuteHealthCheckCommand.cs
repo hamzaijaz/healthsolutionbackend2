@@ -2,15 +2,15 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
-using CapitalRaising.RightsIssues.Service.Application.Common.Models;
+using MyHealthSolution.Service.Application.Common.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace CapitalRaising.RightsIssues.Service.Application.HealthCheck.Commands
+namespace MyHealthSolution.Service.Application.HealthCheck.Commands
 {
     public class ExecuteHealthCheckCommand : IRequest
     {

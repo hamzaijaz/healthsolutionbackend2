@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 

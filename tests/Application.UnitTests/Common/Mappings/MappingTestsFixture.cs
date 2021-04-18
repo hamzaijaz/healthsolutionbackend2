@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Common.Mappings;
+using MyHealthSolution.Service.Application.Common.Mappings;
 
-namespace CapitalRaising.RightsIssues.Service.Application.UnitTests.Common.Mappings
+namespace MyHealthSolution.Service.Application.UnitTests.Common.Mappings
 {
     public class MappingTestsFixture
     {

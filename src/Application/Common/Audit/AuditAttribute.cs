@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Audit
+namespace MyHealthSolution.Service.Application.Common.Audit
 {
     /// <summary>
     /// Audit Attribute

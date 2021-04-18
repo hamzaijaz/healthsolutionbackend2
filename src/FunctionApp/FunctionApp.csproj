@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AzureFunctionsVersion>V3</AzureFunctionsVersion>
-    <RootNamespace>CapitalRaising.RightsIssues.Service.FunctionApp</RootNamespace>
-    <AssemblyName>CapitalRaising.RightsIssues.Service.FunctionApp</AssemblyName>
+    <RootNamespace>MyHealthSolution.Service.FunctionApp</RootNamespace>
+    <AssemblyName>MyHealthSolution.Service.FunctionApp</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.0" />

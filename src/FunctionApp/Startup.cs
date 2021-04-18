@@ -4,14 +4,14 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application;
-using CapitalRaising.RightsIssues.Service.Infrastructure;
+using MyHealthSolution.Service.Application;
+using MyHealthSolution.Service.Infrastructure;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: FunctionsStartup(typeof(CapitalRaising.RightsIssues.Service.FunctionApp.Startup))]
+[assembly: FunctionsStartup(typeof(MyHealthSolution.Service.FunctionApp.Startup))]
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     public class Startup : FunctionsStartup
     {
@@ -28,7 +28,7 @@ namespace CapitalRaising.RightsIssues.Service.FunctionApp
             // NOTE: We must call AddAutoMapper once for the entire application therefore Map Profiles
             // accross all assemblies are loaded here.
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()
-                                    .Where(x => x.GetName().Name.StartsWith("CapitalRaising.RightsIssues.Service")));
+                                    .Where(x => x.GetName().Name.StartsWith("MyHealthSolution.Service")));
 
             services.AddApplication();
 

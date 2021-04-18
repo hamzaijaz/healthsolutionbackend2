@@ -1,11 +1,11 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Persistence.Configurations;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Infrastructure.Persistence.Configurations;
 using Microsoft.Extensions.Options;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests
+namespace MyHealthSolution.Service.Application.IntegrationTests
 {
     public class InMemoryBlobDataStore : IBlobDataStore
     {

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
 using System.Linq;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Files
+namespace MyHealthSolution.Service.Infrastructure.Files
 {
     public class CsvFileBuilder : ICsvFileBuilder
     {

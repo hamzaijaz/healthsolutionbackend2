@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Exceptions
+namespace MyHealthSolution.Service.Application.Common.Exceptions
 {
     public class NotFoundException : Exception
     {

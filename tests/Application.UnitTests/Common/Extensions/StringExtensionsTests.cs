@@ -1,9 +1,9 @@
 using System;
-using CapitalRaising.RightsIssues.Service.Application.Common.Extensions;
+using MyHealthSolution.Service.Application.Common.Extensions;
 using FluentAssertions;
 using Xunit;
 
-namespace CapitalRaising.RightsIssues.Service.Application.UnitTests.Common.Extensions
+namespace MyHealthSolution.Service.Application.UnitTests.Common.Extensions
 {
     public class StringExtensionsTests
     {

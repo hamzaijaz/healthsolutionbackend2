@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CapitalRaising.RightsIssues.Service.Domain.CustomEntities
+namespace MyHealthSolution.Service.Domain.CustomEntities
 {
     public class OfferAcceptanceRecord
     {

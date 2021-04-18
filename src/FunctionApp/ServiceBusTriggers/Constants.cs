@@ -1,4 +1,4 @@
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     public static class Constants
     {

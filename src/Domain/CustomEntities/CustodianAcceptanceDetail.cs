@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CapitalRaising.RightsIssues.Service.Domain.CustomEntities
+namespace MyHealthSolution.Service.Domain.CustomEntities
 {
     public class CustodianAcceptanceDetail
     {

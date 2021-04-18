@@ -3,19 +3,19 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.Threading;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using EFCore.BulkExtensions;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Exceptions;
 using System;
 using System.Linq;
 using System.Data;
 using System.ComponentModel;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Domain.Entities;
 using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
-using CapitalRaising.RightsIssues.Service.Domain.CustomEntities;
+using MyHealthSolution.Service.Domain.CustomEntities;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Persistence
+namespace MyHealthSolution.Service.Infrastructure.Persistence
 {
     public partial class ApplicationDbContext : DbContext, IApplicationDbContext
     {

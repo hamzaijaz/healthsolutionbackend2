@@ -1,7 +1,7 @@
 ﻿using Azure.Storage.Blobs;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Persistence.Configurations;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Infrastructure.Persistence.Configurations;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
@@ -10,7 +10,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Persistence
+namespace MyHealthSolution.Service.Infrastructure.Persistence
 {
 
 

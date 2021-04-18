@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     public interface IFunctionMediator
     {

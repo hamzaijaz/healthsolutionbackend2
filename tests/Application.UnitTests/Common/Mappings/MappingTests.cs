@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Models;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Patients.Models;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Models;
+using MyHealthSolution.Service.Domain.Entities;
 using System;
 using Xunit;
 
-namespace CapitalRaising.RightsIssues.Service.Application.UnitTests.Common.Mappings
+namespace MyHealthSolution.Service.Application.UnitTests.Common.Mappings
 {
     public class MappingTests : IClassFixture<MappingTestsFixture>
     {

@@ -1,8 +1,8 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.FunctionApp;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Persistence;
+using MyHealthSolution.Service.FunctionApp;
+using MyHealthSolution.Service.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,14 +11,14 @@ using Xunit;
 using System.Linq;
 using System.Linq.Expressions;
 using Respawn;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using Moq;
-using Entities = CapitalRaising.RightsIssues.Service.Domain.Entities;
-using CapitalRaising.RightsIssues.Service.Application.IntegrationTests;
+using Entities = MyHealthSolution.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.IntegrationTests;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 //using Computershare.Common.UniqueIdGenerator;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Context;
+using MyHealthSolution.Service.Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 
 namespace Application.IntegrationTests
@@ -155,7 +155,7 @@ namespace Application.IntegrationTests
             {
                 return await mediator.Send(request);    
             }
-            catch (CapitalRaising.RightsIssues.Service.Application.Common.Exceptions.ValidationException ex)
+            catch (MyHealthSolution.Service.Application.Common.Exceptions.ValidationException ex)
             {
                 // note: this helps debug validation errors which can occur in tests
                 output.WriteLine($"ValidationErrors:{Newtonsoft.Json.JsonConvert.SerializeObject(ex.Errors, Newtonsoft.Json.Formatting.Indented)}");

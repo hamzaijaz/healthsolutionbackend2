@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json.Converters;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.JsonConverters
+namespace MyHealthSolution.Service.FunctionApp.JsonConverters
 {
     [ExcludeFromCodeCoverage]
     public class ShortDateConverter : IsoDateTimeConverter

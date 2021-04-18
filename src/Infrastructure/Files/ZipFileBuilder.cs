@@ -1,11 +1,11 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Application.Common.Models;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Files
+namespace MyHealthSolution.Service.Infrastructure.Files
 {
     public class ZipFileBuilder : IZipFileBuilder
     {

@@ -2,12 +2,12 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Files;
+using MyHealthSolution.Service.Infrastructure.Files;
 using Xunit;
 using CsvHelper.Configuration;
 using FluentAssertions;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Files
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Files
 {
     public class CsvFileBuilderTests
     {

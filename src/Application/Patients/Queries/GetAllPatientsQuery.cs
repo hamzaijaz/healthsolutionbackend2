@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using MediatR;
 using System;
 using System.Linq;
@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Patients.Models;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Queries
+namespace MyHealthSolution.Service.Application.Patients.Queries
 {
     public class GetAllPatientsQuery : IRequest<GetAllPatientsQueryResponse>
     {

@@ -8,9 +8,9 @@ using MediatR;
 using Moq;
 using FluentAssertions;
 using Xunit;
-using CapitalRaising.RightsIssues.Service.Application.Common.Behaviours;
+using MyHealthSolution.Service.Application.Common.Behaviours;
 
-namespace CapitalRaising.RightsIssues.Service.Application.UnitTests.Common.Behaviors
+namespace MyHealthSolution.Service.Application.UnitTests.Common.Behaviors
 {
     public class ValidationBehaviorTests
     {
@@ -82,8 +82,8 @@ namespace CapitalRaising.RightsIssues.Service.Application.UnitTests.Common.Behav
 
 
             exception.Should().NotBeNull();
-            exception.Should().BeOfType<CapitalRaising.RightsIssues.Service.Application.Common.Exceptions.ValidationException>();
-            (exception as CapitalRaising.RightsIssues.Service.Application.Common.Exceptions.ValidationException).Errors.Count().Should().Be(1);
+            exception.Should().BeOfType<MyHealthSolution.Service.Application.Common.Exceptions.ValidationException>();
+            (exception as MyHealthSolution.Service.Application.Common.Exceptions.ValidationException).Errors.Count().Should().Be(1);
             mockHandler.Verify(_ => _(), Times.Never);
         }
 

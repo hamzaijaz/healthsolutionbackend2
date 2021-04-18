@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Extensions
+namespace MyHealthSolution.Service.Application.Common.Extensions
 {
     public static class DateTimeExtensions
     {

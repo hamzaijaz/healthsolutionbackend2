@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Mappings
+namespace MyHealthSolution.Service.Application.Common.Mappings
 {
     public class MappingProfile : Profile
     {

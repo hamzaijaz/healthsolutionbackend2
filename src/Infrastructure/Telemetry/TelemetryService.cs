@@ -1,4 +1,4 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
 using Microsoft.ApplicationInsights;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Telemetry
+namespace MyHealthSolution.Service.Infrastructure.Telemetry
 {
     public class TelemetryService: ITelemetryService
     {

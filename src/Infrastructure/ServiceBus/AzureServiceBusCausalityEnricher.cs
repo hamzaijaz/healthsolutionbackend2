@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using Microsoft.Azure.ServiceBus;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     // This enricher is used to enrich the service bus message with context information to correlate calls between 
     // azure functions and service bus. It is only required when azure service bus output bindings are not used because

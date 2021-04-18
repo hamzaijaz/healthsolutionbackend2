@@ -7,7 +7,7 @@
     "ServiceBusConnection": "Endpoint=sb://cpudigitalfoundry-{username}.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey={ursharedkey};TransportType=AmqpWebSockets",
     "CorrespondenceBlobStorageConnectionString": "UseDevelopmentStorage=true",
     "APPINSIGHTS_INSTRUMENTATIONKEY": "",
-    "ApplicationFullName": "dfdev-capitalraising-rightsissues",
+    "ApplicationFullName": "dfdev-myhealthsolution",
     "HealthCheckCRON": "0 */4 * * * *",
     "SendStatisticsEmailsCRON": "0 0 2 * * *"
   }

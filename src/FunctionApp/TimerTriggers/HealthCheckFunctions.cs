@@ -1,9 +1,9 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.HealthCheck.Commands;
+﻿using MyHealthSolution.Service.Application.HealthCheck.Commands;
 using Microsoft.Azure.WebJobs;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.TimerTriggers
+namespace MyHealthSolution.Service.FunctionApp.TimerTriggers
 {
     [ExcludeFromCodeCoverage]
     public class HealthCheckFunctions

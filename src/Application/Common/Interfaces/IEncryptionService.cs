@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Interfaces
+namespace MyHealthSolution.Service.Application.Common.Interfaces
 {
     public interface IEncryptionService
     {

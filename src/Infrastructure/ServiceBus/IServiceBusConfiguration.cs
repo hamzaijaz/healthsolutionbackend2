@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     public interface IServiceBusConfiguration
     {

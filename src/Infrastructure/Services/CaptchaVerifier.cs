@@ -1,11 +1,11 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
 using System;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Services
+namespace MyHealthSolution.Service.Infrastructure.Services
 {
     public class CaptchaVerifier : ICaptchaVerifier
     {

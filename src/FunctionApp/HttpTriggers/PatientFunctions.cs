@@ -2,16 +2,16 @@
 using Microsoft.Azure.WebJobs;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.FunctionApp.Models;
+using MyHealthSolution.Service.FunctionApp.Models;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Queries;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient;
+using MyHealthSolution.Service.Application.Patients.Queries;
+using MyHealthSolution.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Patients.Commands.CreatePatient;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.HttpTriggers
+namespace MyHealthSolution.Service.FunctionApp.HttpTriggers
 {
     [ExcludeFromCodeCoverage] // API tests are expected to cover this area
     public class PatientFunctions

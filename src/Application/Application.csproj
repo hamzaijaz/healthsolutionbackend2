@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <RootNamespace>CapitalRaising.RightsIssues.Service.Application</RootNamespace>
-    <AssemblyName>CapitalRaising.RightsIssues.Service.Application</AssemblyName>
+    <RootNamespace>MyHealthSolution.Service.Application</RootNamespace>
+    <AssemblyName>MyHealthSolution.Service.Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

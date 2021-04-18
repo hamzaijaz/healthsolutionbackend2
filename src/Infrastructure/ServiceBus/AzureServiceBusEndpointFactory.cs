@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Ardalis.GuardClauses;
 using System;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     public class AzureServiceBusEndpointFactory : IBusEndpointFactory
     {

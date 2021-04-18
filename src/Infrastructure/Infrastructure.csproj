@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CapitalRaising.RightsIssues.Service.Infrastructure</RootNamespace>
-    <AssemblyName>CapitalRaising.RightsIssues.Service.Infrastructure</AssemblyName>
+    <RootNamespace>MyHealthSolution.Service.Infrastructure</RootNamespace>
+    <AssemblyName>MyHealthSolution.Service.Infrastructure</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

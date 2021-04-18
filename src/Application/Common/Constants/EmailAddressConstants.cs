@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Constants
+namespace MyHealthSolution.Service.Application.Common.Constants
 {
     public class EmailAddressConstants
     {

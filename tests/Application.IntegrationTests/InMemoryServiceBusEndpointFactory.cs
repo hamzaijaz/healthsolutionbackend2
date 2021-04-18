@@ -1,4 +1,4 @@
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using System.Collections.Concurrent;
 
 namespace Application.IntegrationTests

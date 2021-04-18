@@ -1,6 +1,6 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
+﻿using MyHealthSolution.Service.Application.Patients.Models;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient
+namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
 {
     public class CreatePatientResponse
     {

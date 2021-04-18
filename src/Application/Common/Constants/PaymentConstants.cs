@@ -1,4 +1,4 @@
-﻿namespace CapitalRaising.RightsIssues.Service.Application.Common.Constants
+﻿namespace MyHealthSolution.Service.Application.Common.Constants
 {
     public static class PaymentConstants
     {

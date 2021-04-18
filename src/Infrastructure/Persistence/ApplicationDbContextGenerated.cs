@@ -1,9 +1,9 @@
 using System;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Persistence
+namespace MyHealthSolution.Service.Infrastructure.Persistence
 {
     public partial class ApplicationDbContext : DbContext
     {

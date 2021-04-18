@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Models
+namespace MyHealthSolution.Service.Application.Common.Models
 {
     public class ActionTarget
     {

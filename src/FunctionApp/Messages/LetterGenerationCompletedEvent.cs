@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.Messages
+namespace MyHealthSolution.Service.FunctionApp.Messages
 {
     public class LetterGenerationCompletedEvent
     {

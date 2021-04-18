@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using CapitalRaising.RightsIssues.Service.Application.Common.Behaviours;
+using MyHealthSolution.Service.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using Microsoft.Extensions.Configuration;
 
-namespace CapitalRaising.RightsIssues.Service.Application
+namespace MyHealthSolution.Service.Application
 {
     public static class DependencyInjection
     {

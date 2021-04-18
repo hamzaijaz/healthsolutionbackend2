@@ -1,9 +1,9 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Models;
+﻿using MyHealthSolution.Service.Application.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Interfaces
+namespace MyHealthSolution.Service.Application.Common.Interfaces
 {
     public interface ITelemetryService
     {

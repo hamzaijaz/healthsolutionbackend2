@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Services
+namespace MyHealthSolution.Service.Infrastructure.Services
 {
     [ExcludeFromCodeCoverage]
     public class EncryptionService : IEncryptionService

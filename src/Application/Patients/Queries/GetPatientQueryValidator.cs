@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Queries
+namespace MyHealthSolution.Service.Application.Patients.Queries
 {
     public class GetPatientQueryValidator : AbstractValidator<GetPatientQuery>
     {

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
 using Newtonsoft.Json;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     internal class AzureServiceBusEndpoint : IBusEndpoint
     {

@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     public interface IHttpFunctionMediator
     {

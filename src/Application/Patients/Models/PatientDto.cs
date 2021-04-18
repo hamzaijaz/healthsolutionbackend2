@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Common.Mappings;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Common.Mappings;
+using MyHealthSolution.Service.Domain.Entities;
 using System;
-using Entities = CapitalRaising.RightsIssues.Service.Domain.Entities;
+using Entities = MyHealthSolution.Service.Domain.Entities;
 
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Models
+namespace MyHealthSolution.Service.Application.Patients.Models
 {
     public class PatientDto : IMapFrom<Entities.Patient>
     {

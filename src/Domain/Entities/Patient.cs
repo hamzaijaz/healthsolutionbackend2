@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CapitalRaising.RightsIssues.Service.Domain.Entities
+namespace MyHealthSolution.Service.Domain.Entities
 {
     public partial class Patient
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Custodians.Messages
+namespace MyHealthSolution.Service.Application.Custodians.Messages
 {
     /// <summary>
     /// Custodian Changed Event

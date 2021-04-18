@@ -1,6 +1,6 @@
 using System;
 
-namespace CapitalRaising.RightsIssues.Service.Application.EmailAddresses.Messages
+namespace MyHealthSolution.Service.Application.EmailAddresses.Messages
 {
     /// <summary>
     /// Email address Changed Event

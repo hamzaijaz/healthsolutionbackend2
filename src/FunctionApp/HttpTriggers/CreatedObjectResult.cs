@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     [ExcludeFromCodeCoverage]
     public class CreatedObjectResult : ObjectResult

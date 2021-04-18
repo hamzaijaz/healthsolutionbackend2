@@ -1,9 +1,9 @@
-﻿using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+﻿using MyHealthSolution.Service.Application.Common.Interfaces;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Services
+namespace MyHealthSolution.Service.Infrastructure.Services
 {
     public class CurrencyService: ICurrencyService
     {

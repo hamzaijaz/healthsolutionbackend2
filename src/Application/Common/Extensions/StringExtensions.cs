@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Extensions
+namespace MyHealthSolution.Service.Application.Common.Extensions
 {
     public static class StringExtensions
     {

@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus;
+using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using Moq;
 using Xunit;
 using FluentAssertions;
 using Microsoft.Azure.ServiceBus;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.ServiceBus
 {
     public class ServiceBusCausalityEnricherTests
     {

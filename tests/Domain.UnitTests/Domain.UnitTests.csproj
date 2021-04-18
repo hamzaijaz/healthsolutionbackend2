@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CapitalRaising.RightsIssues.Service.Domain.UnitTests</RootNamespace>
-    <AssemblyName>CapitalRaising.RightsIssues.Service.Domain.UnitTests</AssemblyName>
+    <RootNamespace>MyHealthSolution.Service.Domain.UnitTests</RootNamespace>
+    <AssemblyName>MyHealthSolution.Service.Domain.UnitTests</AssemblyName>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

@@ -2,14 +2,14 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Context;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Files;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Persistence;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Persistence.Configurations;
-using CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Services;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Telemetry;
+using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Infrastructure.Context;
+using MyHealthSolution.Service.Infrastructure.Files;
+using MyHealthSolution.Service.Infrastructure.Persistence;
+using MyHealthSolution.Service.Infrastructure.Persistence.Configurations;
+using MyHealthSolution.Service.Infrastructure.ServiceBus;
+using MyHealthSolution.Service.Infrastructure.Services;
+using MyHealthSolution.Service.Infrastructure.Telemetry;
 using HealthChecks.SqlServer;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Channel;
@@ -20,7 +20,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure
+namespace MyHealthSolution.Service.Infrastructure
 {
     [ExcludeFromCodeCoverage]
     public static class DependencyInjection

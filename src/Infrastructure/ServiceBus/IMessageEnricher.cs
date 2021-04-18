@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Azure.ServiceBus;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus
+namespace MyHealthSolution.Service.Infrastructure.ServiceBus
 {
     public interface IMessageEnricher
     {

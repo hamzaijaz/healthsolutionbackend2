@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation.Results;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Exceptions
+namespace MyHealthSolution.Service.Application.Common.Exceptions
 {
     public class ValidationException : Exception
     {

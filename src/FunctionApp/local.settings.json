@@ -5,7 +5,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "ConnectionString": "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=my_health_solution; Integrated Security=True",
     "ServiceBusConnection": "Endpoint=sb://cpudigitalfoundry-hamza.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=GtZg1HR220hhwJMszNteTuWik9qK0Xm5yRdtLR+eVDk=;TransportType=AmqpWebSockets",
-    "ApplicationFullName": "dfdev-capitalraising-rightsissues",
+    "ApplicationFullName": "dfdev-myhealthsolution",
     "srnEncryptionKey": "BA46C8DF279CD5931069B500E695DBG4",
     "EncryptionConfig:EncryptionKey": "BA46C8DF279CD5931069B500E695DBG4",
     "EncryptionKey": "BA46C8DF279CD5931069B500E695DBG4",

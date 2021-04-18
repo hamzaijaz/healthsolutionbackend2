@@ -1,14 +1,14 @@
 ﻿using Application.IntegrationTests;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Queries;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Patients.Commands.CreatePatient;
+using MyHealthSolution.Service.Application.Patients.Queries;
 using FluentAssertions;
 using System;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Patients.Queries
+namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Queries
 {
     [Collection("Tests")] // XUnit Requirement
     public class GetPatientTests : TestBase

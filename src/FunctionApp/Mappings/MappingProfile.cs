@@ -1,14 +1,14 @@
 using System;
 using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Commands.CreateRightsIssue;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Commands.UpdateRightsIssue;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Models;
-//using CapitalRaising.RightsIssues.Service.Application.RightsIssues.Queries;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
-using CapitalRaising.RightsIssues.Service.FunctionApp.Models;
+using MyHealthSolution.Service.Application.Patients.Models;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Commands.CreateRightsIssue;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Commands.UpdateRightsIssue;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Models;
+//using MyHealthSolution.Service.Application.MyHealthSolution.Queries;
+using MyHealthSolution.Service.Domain.Entities;
+using MyHealthSolution.Service.FunctionApp.Models;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.Mappings
+namespace MyHealthSolution.Service.FunctionApp.Mappings
 {
     public class MappingProfile : Profile
     {
@@ -28,9 +28,6 @@ namespace CapitalRaising.RightsIssues.Service.FunctionApp.Mappings
 
             //CreateMap<Patient, PatientDto>()
             //    .ForAllOtherMembers(x => x.MapAtRuntime());
-
-            //CreateMap<GetRightsIssuesQueryResponse, RightsIssueResponse>()
-            //     .ForMember(x => x.RightsIssues, s => s.MapFrom(source => source.RightsIssues));
 
         }
     }

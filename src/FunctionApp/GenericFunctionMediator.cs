@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using MediatR;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp
+namespace MyHealthSolution.Service.FunctionApp
 {
     /// <summary>
     /// Represents a class which acts as a mediator between the function app and the application.

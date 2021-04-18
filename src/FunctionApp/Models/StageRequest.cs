@@ -1,6 +1,6 @@
 using System;
 
-namespace  CapitalRaising.RightsIssues.Service.FunctionApp.Models
+namespace  MyHealthSolution.Service.FunctionApp.Models
 {
     public class StageRequest
     {

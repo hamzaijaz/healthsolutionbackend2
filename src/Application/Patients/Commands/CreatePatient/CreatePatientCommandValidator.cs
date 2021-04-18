@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient
+namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
 {
     public class CreatePatientCommandValidator : AbstractValidator<CreatePatientCommand>
     {

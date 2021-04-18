@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Exceptions
+namespace MyHealthSolution.Service.Application.Common.Exceptions
 {
     public class DuplicateItemException : Exception
     {

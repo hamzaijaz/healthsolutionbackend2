@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace CapitalRaising.RightsIssues.Service.Application.IntegrationTests.Extensions
+namespace MyHealthSolution.Service.Application.IntegrationTests.Extensions
 {
     public static class StreamExtensions
     {

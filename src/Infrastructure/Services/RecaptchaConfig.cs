@@ -1,4 +1,4 @@
-﻿namespace CapitalRaising.RightsIssues.Service.Infrastructure.Services
+﻿namespace MyHealthSolution.Service.Infrastructure.Services
 {
     public class RecaptchaConfig
     {

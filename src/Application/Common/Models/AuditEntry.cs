@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using Ardalis.GuardClauses;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Models
+namespace MyHealthSolution.Service.Application.Common.Models
 {
     public class AuditEntry
     {

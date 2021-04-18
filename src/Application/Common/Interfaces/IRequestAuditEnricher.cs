@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Models;
+using MyHealthSolution.Service.Application.Common.Models;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Interfaces
+namespace MyHealthSolution.Service.Application.Common.Interfaces
 {
     public interface IRequestAuditEnricher<TRequest>
     {

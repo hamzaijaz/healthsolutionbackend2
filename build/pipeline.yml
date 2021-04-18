@@ -9,8 +9,8 @@ variables:
   local-ArtifactFeedName: FoundryCommon
   disable.coverage.autogenerate: 'true'
   local-ProductCode: cr
-  local-ProductName: capitalraising
-  local-ApplicationName: rightsissues
+  local-ProductName: myhealthsolution
+  local-ApplicationName: myhealthsolution
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
     local-branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:

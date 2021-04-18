@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
-using ValidationException = CapitalRaising.RightsIssues.Service.Application.Common.Exceptions.ValidationException;
+using ValidationException = MyHealthSolution.Service.Application.Common.Exceptions.ValidationException;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Common.Behaviours
+namespace MyHealthSolution.Service.Application.Common.Behaviours
 {
     public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

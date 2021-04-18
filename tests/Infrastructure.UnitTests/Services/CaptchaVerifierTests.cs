@@ -1,4 +1,4 @@
-﻿using CapitalRaising.RightsIssues.Service.Infrastructure.Services;
+﻿using MyHealthSolution.Service.Infrastructure.Services;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using Microsoft.Extensions.Logging;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Services
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Services
 {
     public class CaptchaVerifierTests
     {

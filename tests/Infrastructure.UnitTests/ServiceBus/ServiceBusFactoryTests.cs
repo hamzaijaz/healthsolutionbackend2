@@ -1,14 +1,14 @@
 ﻿using System.Linq;
-using CapitalRaising.RightsIssues.Service.Infrastructure.ServiceBus;
+using MyHealthSolution.Service.Infrastructure.ServiceBus;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.UnitTests.Services
+namespace MyHealthSolution.Service.Infrastructure.UnitTests.Services
 {
     public class ServiceBusFactoryTests
     {

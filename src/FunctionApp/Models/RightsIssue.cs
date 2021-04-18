@@ -1,8 +1,8 @@
 ﻿using System;
-using CapitalRaising.RightsIssues.Service.FunctionApp.JsonConverters;
+using MyHealthSolution.Service.FunctionApp.JsonConverters;
 using Newtonsoft.Json;
 
-namespace CapitalRaising.RightsIssues.Service.FunctionApp.Models
+namespace MyHealthSolution.Service.FunctionApp.Models
 {
     public class RightsIssue
     {

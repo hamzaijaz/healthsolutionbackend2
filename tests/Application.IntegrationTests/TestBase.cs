@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Exceptions;
 using MediatR;
 using Xunit.Abstractions;
 

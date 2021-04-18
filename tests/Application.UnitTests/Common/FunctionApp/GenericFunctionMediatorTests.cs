@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.FunctionApp;
-using CapitalRaising.RightsIssues.Service.Infrastructure.Context;
+using MyHealthSolution.Service.FunctionApp;
+using MyHealthSolution.Service.Infrastructure.Context;
 using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Http;

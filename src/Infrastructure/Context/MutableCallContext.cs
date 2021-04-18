@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Context
+namespace MyHealthSolution.Service.Infrastructure.Context
 {
     [ExcludeFromCodeCoverage]
     public class MutableCallContext : ICallContext

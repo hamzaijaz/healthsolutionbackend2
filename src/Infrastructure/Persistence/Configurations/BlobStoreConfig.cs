@@ -1,4 +1,4 @@
-﻿namespace CapitalRaising.RightsIssues.Service.Infrastructure.Persistence.Configurations
+﻿namespace MyHealthSolution.Service.Infrastructure.Persistence.Configurations
 {
     public class BlobStoreConfig
     {

@@ -41,11 +41,11 @@ Write-Host "INFO: Creating Service Bus specific alert rules" -ForegroundColor Gr
 
 $queues = Get-AzServiceBusQueue -ResourceGroup ${product-ServiceBusResourceGroup} -NamespaceName ${product-ServiceBusName}  `
                             | Select-Object Name `
-                            | Where-Object { $_.Name -like 'capitalraising.rightsissues.*'}
+                            | Where-Object { $_.Name -like 'myhealthsolution.*'}
                             
 $topics = Get-AzServiceBusTopic -ResourceGroup ${product-ServiceBusResourceGroup} -NamespaceName ${product-ServiceBusName}  `
                             | Select-Object Name `
-                            | Where-Object { $_.Name -like 'capitalraising.rightsissues.*'}
+                            | Where-Object { $_.Name -like 'myhealthsolution.*'}
 
 [string[]] $dimensionValues1 = $queues.Name
 [string[]] $dimensionValues2 = $topics.Name
@@ -55,7 +55,7 @@ $serviceBusEntityDimensions = @(
     @{
         Name = "EntityName"
         Values = $dimensionValues
-        Description = "Capital Raising RightsIssues $ShortEnvironment Queues-Topics"
+        Description = "My Health Solution $ShortEnvironment Queues-Topics"
     }
 )
 

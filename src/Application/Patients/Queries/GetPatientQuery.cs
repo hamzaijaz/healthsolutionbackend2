@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Domain.Entities;
 using MediatR;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
+using MyHealthSolution.Service.Application.Patients.Models;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Queries
+namespace MyHealthSolution.Service.Application.Patients.Queries
 {
     public class GetPatientQuery : IRequest<GetPatientQueryResponse>
     {

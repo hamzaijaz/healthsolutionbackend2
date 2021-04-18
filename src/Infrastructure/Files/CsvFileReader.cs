@@ -3,12 +3,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Interfaces;
 using CsvHelper;
 using CsvHelper.Configuration;
 
-namespace CapitalRaising.RightsIssues.Service.Infrastructure.Files
+namespace MyHealthSolution.Service.Infrastructure.Files
 {
     public class CsvFileReader : ICsvFileReader
     {

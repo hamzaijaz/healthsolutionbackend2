@@ -1,9 +1,9 @@
 ﻿using Ardalis.GuardClauses;
 using AutoMapper;
-using CapitalRaising.RightsIssues.Service.Application.Common.Exceptions;
-using CapitalRaising.RightsIssues.Service.Application.Common.Interfaces;
-using CapitalRaising.RightsIssues.Service.Application.Patients.Models;
-using CapitalRaising.RightsIssues.Service.Domain.Entities;
+using MyHealthSolution.Service.Application.Common.Exceptions;
+using MyHealthSolution.Service.Application.Common.Interfaces;
+using MyHealthSolution.Service.Application.Patients.Models;
+using MyHealthSolution.Service.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CapitalRaising.RightsIssues.Service.Application.Patients.Commands.CreatePatient
+namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
 {
     public class CreatePatientCommand : IRequest<CreatePatientResponse>
     {

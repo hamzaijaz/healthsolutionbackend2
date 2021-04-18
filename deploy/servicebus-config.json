@@ -1,21 +1,21 @@
 {
   "queues": [
     {
-      "name": "capitalraising.rightsissues.messages.actioncompletedcommand",
+      "name": "myhealthsolution.messages.actioncompletedcommand",
       "maxSize": "1024"
     },
     {
-      "name": "capitalraising.rightsissues.messages.processrefundscommand",
+      "name": "myhealthsolution.messages.processrefundscommand",
       "maxSize": "1024"
     }
   ],
   "topics": [
     {
-      "name": "capitalraising.rightsissues.messages.rightsissuechangedevent",
+      "name": "myhealthsolution.messages.rightsissuechangedevent",
       "maxSize": 1024
     },
     {
-      "name": "capitalraising.rightsissues.messages.rightsissuestagechangedevent",
+      "name": "myhealthsolution.messages.rightsissuestagechangedevent",
       "maxSize": 1024
     }
   ],
