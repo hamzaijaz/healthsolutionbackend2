@@ -6,7 +6,6 @@
     "ConnectionString": "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=my_health_solution; Integrated Security=True",
     "ServiceBusConnection": "Endpoint=sb://cpudigitalfoundry-hamza.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=GtZg1HR220hhwJMszNteTuWik9qK0Xm5yRdtLR+eVDk=;TransportType=AmqpWebSockets",
     "ApplicationFullName": "dfdev-myhealthsolution",
-    //"Recaptcha:SecretKey": "6Lfe08QUAAAAAG05SI3nd54w2WyOuoOqoDpBp4_U",
     "RecaptchaConfig:RecaptchaKey": "6Ldpmq4aAAAAAMyK2tFECzsLLJBHXCw76JW8i6NU",
     "RecaptchaKey": "6Ldpmq4aAAAAAMyK2tFECzsLLJBHXCw76JW8i6NU"
   },

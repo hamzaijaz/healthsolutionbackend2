@@ -12,8 +12,6 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
 {
     public class CreatePatientCommand : IRequest<CreatePatientResponse>
     {
-        //public PatientDto Patient { get; set; }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
@@ -75,6 +73,5 @@ namespace MyHealthSolution.Service.Application.Patients.Commands.CreatePatient
                 };
             }
         }
-
     }
 }

@@ -23,7 +23,6 @@ namespace Application.IntegrationTests
     {
         private static IConfiguration _configuration;
         private static IServiceScopeFactory _scopeFactory;
-    
         private static Checkpoint _checkpoint;
         public static string TestUser = "RaiseTesting";
 

@@ -45,6 +45,5 @@ namespace MyHealthSolution.Service.Application.Patients.Queries
                 };
             }
         }
-
     }
 }

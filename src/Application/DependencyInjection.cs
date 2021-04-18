@@ -1,11 +1,8 @@
-﻿using System.Linq;
-using MyHealthSolution.Service.Application.Common.Behaviours;
+﻿using MyHealthSolution.Service.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using MyHealthSolution.Service.Application.Common.Interfaces;
-using Microsoft.Extensions.Configuration;
 
 namespace MyHealthSolution.Service.Application
 {
@@ -17,7 +14,6 @@ namespace MyHealthSolution.Service.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-
             return services;
         }
     }

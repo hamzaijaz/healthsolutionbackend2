@@ -7,7 +7,8 @@ namespace MyHealthSolution.Service.Application.Patients.Queries
         public GetPatientQueryValidator()
         {
             RuleFor(v => v.PatientKey)
-                .NotEmpty();
+                .NotNull().WithMessage("PatientKey must not be null")
+                .NotEmpty().WithMessage("PatientKey must not be empty");
         }
     }
 }

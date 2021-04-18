@@ -17,6 +17,18 @@ namespace MyHealthSolution.Service.Application.IntegrationTests.Patients.Queries
         }
 
         [Fact]
+        public async Task ShouldReturnNoPatient()
+        {
+            //querying data without storing any patient in database
+            var query = new GetAllPatientsQuery();
+
+            var queryResult = await Testing.SendAsync(query, this.Output);
+
+            queryResult.Should().NotBeNull();
+            queryResult.Patients.Count.Should().Be(0);
+        }
+
+        [Fact]
         public async Task ShouldReturnCorrectPatient()
         {
             var command = CreatePatientCommand();
